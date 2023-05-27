@@ -18,9 +18,9 @@ const Event = dynamic<EventProps>(
 const ACTIONS: Array<NavigationItem> = [
 	{
 		type: NavigationItemType.LINK,
-		href: '/blog',
-		icon: <Icon className="mr-3" icon="feather:edit-3" />,
-		text: 'Blog',
+		href: 'https://t.me/Fulkerson',
+		icon: <Icon className="mr-3" icon="mingcute:telegram-fill" />,
+		text: 'Telegram',
 	},
 	{
 		type: NavigationItemType.LINK,
@@ -31,7 +31,7 @@ const ACTIONS: Array<NavigationItem> = [
 	{
 		type: NavigationItemType.LINK,
 		external: true,
-		href: 'https://github.com/nurodev',
+		href: 'https://github.com/maksktl',
 		icon: <Icon className="mr-3" icon="feather:github" />,
 		text: 'GitHub',
 	},
@@ -39,11 +39,11 @@ const ACTIONS: Array<NavigationItem> = [
 
 export default function HomePage(): JSX.Element {
 	const today = new Date();
-	const birthday = new Date('1997-08-09');
+	const birthday = new Date('2001-03-20');
 	const isBirthday =
 		today.getDate() === birthday.getDate() && today.getMonth() === birthday.getMonth();
 
-	const description = `I am a software engineer & games developer`;
+	const description = `Разработка чат-ботов, парсеров и бэкэнда используя java и python`;
 
 	return (
 		<Layout.Default>
@@ -56,10 +56,11 @@ export default function HomePage(): JSX.Element {
 							opacity: [0, 1],
 							scale: [0.75, 1],
 						}}
-						className="text-gray-500 dark:text-white text-5xl sm:text-6xl md:text-6xl lg:text-8xl tracking-tight font-extrabold">
-						Hey <span className="inline-block origin-70 hover:(animate-wave)">👋</span>{' '}
-						I&apos;m Ben, <br className="hidden sm:block" />a{' '}
-						<Pill.Standard className="mt-4">developer</Pill.Standard>
+						className="text-gray-500 dark:text-white text-2xl sm:text-3xl md:text-3xl lg:text-5xl tracking-tight font-extrabold">
+						Привет <span className="inline-block origin-70 hover:(animate-wave)">👋</span>{' '}
+						я Макс.<br className="hidden sm:block" />{' '} Занимаюсь
+						<Pill.Standard className="mt-4">разработкой</Pill.Standard>
+						на <Pill.Standard className="mt-3">фрилансе</Pill.Standard>
 					</Animate>
 
 					<Animate

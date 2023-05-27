@@ -6,82 +6,82 @@ import { usePersistantState, useStatus } from '~/lib';
 import { NavigationItemType, Theme } from '~/types';
 
 import type { NavigationItem, NavigationItems } from '~/types';
-
-const staticMenuItems: Array<Array<NavigationItem>> = [
-	[
-		{
-			type: NavigationItemType.LINK,
-			icon: 'feather:home',
-			text: 'Home',
-			href: '/',
-		},
-		{
-			type: NavigationItemType.LINK,
-			icon: 'feather:edit-3',
-			text: 'Blog',
-			href: '/blog',
-		},
-		{
-			type: NavigationItemType.LINK,
-			icon: 'feather:copy',
-			text: 'Projects',
-			href: '/projects',
-		},
-		{
-			type: NavigationItemType.LINK,
-			icon: 'feather:clock',
-			text: 'Timeline',
-			href: '/timeline',
-		},
-		{
-			type: NavigationItemType.LINK,
-			icon: 'feather:link',
-			text: 'Referrals',
-			href: '/referrals',
-		},
-	],
-	[
-		{
-			type: NavigationItemType.LINK,
-			icon: 'feather:twitter',
-			text: 'Twitter',
-			href: 'https://twitter.com/nurodev',
-			external: true,
-		},
-		{
-			type: NavigationItemType.LINK,
-			icon: 'feather:github',
-			text: 'GitHub',
-			href: 'https://github.com/nurodev',
-			external: true,
-		},
-	],
-];
+//
+// const staticMenuItems: Array<Array<NavigationItem>> = [
+// 	[
+// 		{
+// 			type: NavigationItemType.LINK,
+// 			icon: 'feather:home',
+// 			text: 'Home',
+// 			href: '/',
+// 		},
+// 		{
+// 			type: NavigationItemType.LINK,
+// 			icon: 'feather:edit-3',
+// 			text: 'Blog',
+// 			href: '/blog',
+// 		},
+// 		{
+// 			type: NavigationItemType.LINK,
+// 			icon: 'feather:copy',
+// 			text: 'Projects',
+// 			href: '/projects',
+// 		},
+// 		{
+// 			type: NavigationItemType.LINK,
+// 			icon: 'feather:clock',
+// 			text: 'Timeline',
+// 			href: '/timeline',
+// 		},
+// 		{
+// 			type: NavigationItemType.LINK,
+// 			icon: 'feather:link',
+// 			text: 'Referrals',
+// 			href: '/referrals',
+// 		},
+// 	],
+// 	[
+// 		{
+// 			type: NavigationItemType.LINK,
+// 			icon: 'feather:twitter',
+// 			text: 'Twitter',
+// 			href: 'https://twitter.com/nurodev',
+// 			external: true,
+// 		},
+// 		{
+// 			type: NavigationItemType.LINK,
+// 			icon: 'feather:github',
+// 			text: 'GitHub',
+// 			href: 'https://github.com/nurodev',
+// 			external: true,
+// 		},
+// 	],
+// ];
 
 export function useNavigation(): {
-	menu: NavigationItems;
+	// menu: NavigationItems;
 	settings: NavigationItems;
 } {
 	const state = usePersistantState();
 	const { animations: background, sound } = state.get();
-	const { color, loading, status } = useStatus();
+	// const { color, loading, status } = useStatus();
 	const { theme, setTheme } = useTheme();
 
-	const menuItems: NavigationItems = [
-		...staticMenuItems,
-		...(!loading && status.discord_status !== 'offline'
-			? [
-					[
-						{
-							type: NavigationItemType.LINK,
-							icon: <Status.Indicator color={color} pulse />,
-							text: 'Status',
-							href: '/status',
-						} as NavigationItem,
-					],
-			  ]
-			: []),
-	];
+	// const menuItems: NavigationItems = [
+	// 	// ...staticMenuItems,
+	// 	...(!loading && status.discord_status !== 'offline'
+	// 		? [
+	// 				[
+	// 					{
+	// 						type: NavigationItemType.LINK,
+	// 						icon: <Status.Indicator color={color} pulse />,
+	// 						text: 'Status',
+	// 						href: '/status',
+	// 					} as NavigationItem,
+	// 				],
+	// 		  ]
+	// 		: []),
+	// ];
 
 	const settingsItems: NavigationItems = [
 		[
@@ -135,7 +135,7 @@ export function useNavigation(): {
 	];
 
 	return {
-		menu: menuItems,
+		// menu: menuItems,
 		settings: settingsItems,
 	};
 }
